@@ -52,20 +52,25 @@ def print_one_article(article)
     author = article[:author]
     title = article[:title]
     text = article[:text]
-    string = "by " + "#{author}" + "\n " +"#{title}" + "\n" +"#{text}" 
+    string = "#{title}" + "\n" + "by " + "#{author}" + "\n " +"#{text}" 
     return string
 end
-print print_one_article(ARTICLES[0])
+#print print_one_article(ARTICLES[0])
 
 
 def print_many_articles(articles)
- binding.pry
-  articles.map do | element | 
-    print_one_article (element)
+  string_array = []
+  articles.each do | element | 
+    strings = print_one_article (element)
+    string_array  << strings   
+  end
+  puts string_array 
+end 
+
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
   #end 
-end
+
 
 print print_many_articles(ARTICLES)
 

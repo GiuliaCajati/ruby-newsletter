@@ -71,46 +71,50 @@ end
   # and format each one using the print_one_article method
   #end 
 
+#print print_many_articles(ARTICLES)
 
-print print_many_articles(ARTICLES)
 
+def format_campus_location(campus)
+  name = campus [:name]
+  address = campus [:address]
+  "Flatiron " + "#{name}" + " " + "#{address}"
+end
 
-# def format_campus_location(campus)
-#   "Flatiron #{campus["name"]}"
-# end
+#print format_campus_location(CAMPUS)
 
-# def format_subject
-#   puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
-# end
+def format_subject
+  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
+end
 
-# def format_footer(campus)
-#   "Flatiron Newsletter · #{campus[:name]} · #{campus[:address]} "
-# end
+#print format_subject
 
-# def print_newsletter(number)
-#   puts "Generating this week's newsletter...\n\n"
+def format_footer(campus)
+  "Flatiron Newsletter · #{campus[:name]} · #{campus[:address]} "
+end
 
-#   print "SUBJECT: "
-#   format_subject
+def print_newsletter(number)
+  puts "Generating this week's newsletter...\n\n"
 
-#   print "RECIPIENTS: "
-#   print_recipients
+  print "SUBJECT: "
+  format_subject
 
-#   puts "\nBODY:"
-#   format_subject
-#   articles = first_n_articles(number)
-#   print_many_articles(articles)
-#   puts format_footer(CAMPUS)
+  print "RECIPIENTS: "
+  print_recipients
 
-#   end
-# end
+  puts "\nBODY:"
+  format_subject
+  articles = first_n_articles(number)
+  print_many_articles(articles)
+  puts format_footer(CAMPUS)
 
-# def run
-#   # We want our program to print three articles by default,
-#   # but we can change that number here
-#   print_newsletter("3")
-# end
+end
 
-# # When we run "ruby newsletter.rb" in the command line,
-# # the 'run' method will be called because we're calling it below.
-# run
+def run
+  # We want our program to print three articles by default,
+  # but we can change that number here
+  print_newsletter(3)
+end
+
+# When we run "ruby newsletter.rb" in the command line,
+# the 'run' method will be called because we're calling it below.
+run
